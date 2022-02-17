@@ -8,7 +8,7 @@ const profiles = files.map((file) => {
       fs.readFileSync(`${path.join(__dirname, 'public', 'data', file)}`, 'utf8'),
     )
     return {
-      name: file.split(':    ')[0],
+      name: file.split(',')[0],
       ...data,
     }
   })
@@ -19,4 +19,20 @@ const output = profiles.map((profile) => ({
     age: profile.age
 }))
 //fs.writeFileSync(writeDirectoryPath, JSON.stringify(output))
+const writeDirectoryPath = path.join(__dirname, 'public', 'list.json');
 console.log(output);
+fs.writeFileSync(writeDirectoryPath, JSON.stringify(output));
+
+// RESTFUL API
+
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+app.get('/api', (req, res) => {
+  res.setHeader("content-type", "application/json");
+  res.send(JSON.stringify(output));
+})
+
+app.listen(8000, () => console.log("Server is running on 8000."))
