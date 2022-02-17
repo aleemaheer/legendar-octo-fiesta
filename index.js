@@ -1,3 +1,9 @@
+/**
+ * This file will read the json files from public/data/
+ * Then this will write the data in the a one json file
+ * And sends the whole json data in the api
+ */
+
 const path = require('path');
 const fs = require('fs');
 // Reading a json file
