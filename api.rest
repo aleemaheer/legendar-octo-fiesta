@@ -1,0 +1,2 @@
+### Get requet
+GET http://localhost:8000/api HTTP/1.1
