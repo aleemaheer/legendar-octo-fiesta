@@ -1,11 +1,10 @@
 class Car {
-	#name = "Bugati";
-	#color = "blue";
-
+	carName = "Bugatti";
+	carColor = "Black";
 	getName() {
-		return `The name of car is ${this.name}`;
+		return `The name of car is ${this.carName}`;
 	}
 }
 
 const car = new Car();
-console.log(car.name);
+console.log(car.getName());
