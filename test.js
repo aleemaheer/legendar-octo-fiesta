@@ -59,16 +59,85 @@
 
 // Reduce Method
 
-const arr1 = [1, 2, 3, 4, 5, 6];
-const initialValue = 0;
-const sum = arr1.reduce((previousValue, currentValue, currentIndex) => {
-	previousValue + currentValue, initialValue;
-	console.log(currentIndex);
-});
-console.log(sum);
+// const arr1 = [1, 2, 3, 4, 5, 6];
+// const initialValue = 0;
+// const sum = arr1.reduce((previousValue, currentValue, currentIndex) => {
+// 	previousValue + currentValue, initialValue;
+// 	console.log(currentIndex);
+// });
+// console.log(sum);
 
-const printNum = [1, 2, 3, 4, 5].reduce(
-	(previousValue, currentValue) => previousValue + currentValue
-);
+// const printNum = [1, 2, 3, 4, 5].reduce(
+// 	(previousValue, currentValue) => previousValue + currentValue
+// );
 
 //console.log(printNum);
+
+//
+//
+// write a async function to return success message after 3 seconds
+// getResponseCallback
+// getResponsePromise
+// getResponseAsync
+
+async function getResponseAsync() {
+	const msg = "success";
+	await setTimeout(() => {
+		return msg;
+	}, 3000);
+}
+
+function getResponseCallback(callback) {
+	const msg = "success";
+	setTimeout(() => {
+		callback(null, "Success");
+	}, 3000);
+}
+
+function getResponsePromise() {
+	return new Promise((resolve, reject) => {
+		const msg = "success";
+		setTimeout(() => {
+			return msg;
+		}, 3000);
+		resolve();
+	});
+}
+
+getResponseCallback((err, msg) => {
+	if (err) {
+		console.log(err);
+	}
+	console.log(msg);
+});
+
+//console.log(getResponseAsync());
+
+let names = ["john", "David", "emma", "Zahid"];
+names = names.map((name) => {
+	return name.toLowerCase();
+});
+//names.sort();
+//console.log(names);
+let lower = [];
+names.forEach((name) => {
+	lower.push(name.toLowerCase());
+});
+//console.log(lower);
+
+function capitalizeWords(arr) {
+	return arr.map((element) => {
+		return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+	});
+}
+
+// 👇️ ['Hello', 'World']
+//console.log(capitalizeWords(["hello", "world"]));
+
+// 👇️ ['One', 'Two', 'Three']
+//console.log(capitalizeWords(["one", "two", "three"]));
+
+names = names.map((name) => {
+	return name.replace(/emma/gi, "Aleem");
+});
+console.log(names);

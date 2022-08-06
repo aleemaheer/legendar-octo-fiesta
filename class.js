@@ -1,8 +1,8 @@
 class Car {
-	carName = "Bugatti";
+	#carName = "Bugatti";
 	carColor = "Black";
 	getName() {
-		return `The name of car is ${this.carName}`;
+		return `The name of car is ${this.#carName}`;
 	}
 }
 
