@@ -27,4 +27,3 @@ try {
     console.error('Error updating file:', error);
     process.exit(1);
 }
-update - file.js
