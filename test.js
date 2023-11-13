@@ -140,7 +140,7 @@
 // names = names.map((name) => {
 // 	return name.replace(/emma/gi, "Aleem");
 // });
-// console.log(names);
+// console.log(names); 
 
 const fs = require("fs");
 const path = __dirname + "/Data";
